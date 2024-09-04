@@ -653,16 +653,16 @@ tagsToGroupsST aGroups (WScratch {w_pos=pos})= do
   let act _this_index [] = return ()
       act this_index ((GroupInfo _ parent start stop flagtag):gs) = do
         flagVal <- pos !! flagtag
-        if (-1) == flagVal then act this_index gs
-          else do
         startPos <- pos !! start
+        if (-1) == flagVal then set ma this_index (startPos, 0) -- act this_index gs
+          else do
         stopPos <- pos !! stop
         (startParent,lengthParent) <- ma !! parent
         let ok = (0 <= startParent &&
                   0 <= lengthParent &&
                   startParent <= startPos &&
                   stopPos <= startPos + lengthParent)
-        if not ok then act this_index gs
+        if not ok then set ma this_index (startPos, 0) -- act this_index gs
           else set ma this_index (startPos,stopPos-startPos)
   forM_ (range (1,b_max)) $ (\i -> act i (aGroups!i))
   unsafeFreeze ma
