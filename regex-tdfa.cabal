@@ -10,7 +10,7 @@ copyright:              Copyright (c) 2007-2009, Christopher Kuklewicz
 author:                 Christopher Kuklewicz
 maintainer:             Andreas Abel
 homepage:               https://wiki.haskell.org/Regular_expressions
-bug-reports:            https://github.com/haskell-hvr/regex-tdfa/issues
+bug-reports:            https://github.com/naminx/regex-tdfa/issues
 
 category:               Text
 synopsis:               Pure Haskell Tagged DFA Backend for "Text.Regex" (regex-base)
@@ -40,11 +40,11 @@ tested-with:
 
 source-repository head
   type:                git
-  location:            https://github.com/haskell-hvr/regex-tdfa.git
+  location:            https://github.com/naminx/regex-tdfa.git
 
 source-repository this
   type:                git
-  location:            https://github.com/haskell-hvr/regex-tdfa.git
+  location:            https://github.com/naminx/regex-tdfa.git
   tag:                 v1.3.2.2-r2
 
 flag force-O2
