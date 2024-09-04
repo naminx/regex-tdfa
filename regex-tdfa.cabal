@@ -1,5 +1,5 @@
 cabal-version:          1.12
-name:                   regex-tdfa
+name:                   my-regex-tdfa
 version:                1.3.2.2
 x-revision:             3
 
@@ -10,7 +10,7 @@ copyright:              Copyright (c) 2007-2009, Christopher Kuklewicz
 author:                 Christopher Kuklewicz
 maintainer:             Andreas Abel
 homepage:               https://wiki.haskell.org/Regular_expressions
-bug-reports:            https://github.com/naminx/regex-tdfa/issues
+bug-reports:            https://github.com/naminx/my-regex-tdfa/issues
 
 category:               Text
 synopsis:               Pure Haskell Tagged DFA Backend for "Text.Regex" (regex-base)
@@ -40,18 +40,18 @@ tested-with:
 
 source-repository head
   type:                git
-  location:            https://github.com/naminx/regex-tdfa.git
+  location:            https://github.com/naminx/my-regex-tdfa.git
 
 source-repository this
   type:                git
-  location:            https://github.com/naminx/regex-tdfa.git
+  location:            https://github.com/naminx/my-regex-tdfa.git
   tag:                 v1.3.2.2-r2
 
 flag force-O2
   default: False
   manual: True
   description:
-    Force building @regex-tdfa@ with \"@ghc-options: -O2@\".
+    Force building @my-regex-tdfa@ with \"@ghc-options: -O2@\".
     .
     __NOTE__: This flag is mostly provided for legacy use-cases. Nowadays you can conveniently control optimization levels on a per-package granularity via @cabal.project@ files; see <https://cabal.readthedocs.io/en/latest/nix-local-build.html#configuring-builds-with-cabal-project cabal's user-guide> for more details.
 
@@ -92,7 +92,7 @@ library
   --
   -- NB: This is the same logic `parsec.cabal` uses, so this doesn't
   -- add any new dependency that isn't already incurred by
-  -- `regex-tdfa`'s transitive deps
+  -- `my-regex-tdfa`'s transitive deps
   if !impl(ghc >= 8.0)
     build-depends:      fail               == 4.9.*
                       , semigroups         == 0.18.* || == 0.19.*
